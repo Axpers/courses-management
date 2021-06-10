@@ -1,0 +1,10 @@
+mat-toolbar {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-toolbar > div {
+  display: flex;
+  align-items: center;
+}
