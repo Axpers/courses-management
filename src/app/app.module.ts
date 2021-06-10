@@ -8,6 +8,8 @@ import { MaterialModule } from './material/material.module';
 import { CoursesComponent } from './courses/courses.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
+import { ListCoursesComponent } from './courses/list-courses/list-courses.component';
+import { CourseFormComponent } from './courses/course-form/course-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HeaderComponent } from './header/header.component';
     CoursesComponent,
     SidebarComponent,
     HeaderComponent,
+    ListCoursesComponent,
+    CourseFormComponent,
   ],
   imports: [
     BrowserModule,

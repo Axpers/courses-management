@@ -21,17 +21,14 @@ app-root {
 app-header {
   grid-column: 1/-1;
   grid-row: 1/2;
-  background-color: chocolate;
 }
 
 app-sidebar {
   grid-column: 1/2;
   grid-row: 2/3;
-  background-color: deepskyblue;
 }
 
 .container {
   grid-column: 2/-1;
   grid-row: 2/3;
-  background-color: magenta;
 }
