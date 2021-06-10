@@ -2,4 +2,23 @@ mat-sidenav-container {
   height: 100%;
   display: flex;
   flex-flow: column wrap;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  padding-top: 10px;
+
 }
+div {
+  display: flex;
+  align-items: center;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  width: 95%;
+  display: flex;
+}
+
