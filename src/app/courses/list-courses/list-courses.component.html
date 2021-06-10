@@ -3,13 +3,22 @@
     <mat-card-title>Liste cours</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-card>
-      Cours 1
-      Description 1
-    </mat-card>
-    <mat-card>
-      Cours 2
-      Description 2
-    </mat-card>
+    <mat-list>
+      <mat-list-item>
+        <h3 mat-line>Nom du cours</h3>
+        <p mat-line> description du cours</p>
+        <button mat-icon-button color="warn">
+          <mat-icon mat-list-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <h3 mat-line>Nom du cours</h3>
+        <p mat-line> description du cours</p>
+        <button mat-icon-button color="warn">
+          <mat-icon mat-list-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+
   </mat-card-content>
 </mat-card>

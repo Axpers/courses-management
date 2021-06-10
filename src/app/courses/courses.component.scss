@@ -1,12 +1,11 @@
-div {
+.courses-main-container {
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-}
+  justify-content: space-evenly;
 
-div > * {
-  width: 45%;
-  height: 85%;
+  > div {
+    flex:0 1 48%;
+    margin-top: 2%;
+  }
 }
