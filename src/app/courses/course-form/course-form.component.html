@@ -4,6 +4,30 @@
   </mat-card-header>
 
   <mat-card-content>
-    Text content
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Nom du cours</mat-label>
+        <input matInput type="text" name="nom" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description du cours</mat-label>
+        <input matInput type="text" name="description">
+      </mat-form-field>
+
+      <label>Pourcentage completé</label>
+      <mat-slider thumbLabel min="0" max="100" name="percentComplete">
+      </mat-slider>
+
+      <mat-checkbox>
+        Favorite
+      </mat-checkbox>
+    </form>
+
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button mat-line>
+      Submit
+    </button>
+  </mat-card-actions>
 </mat-card>
