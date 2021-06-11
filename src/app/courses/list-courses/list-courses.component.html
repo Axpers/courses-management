@@ -4,16 +4,9 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item>
-        <h3 mat-line>Nom du cours</h3>
-        <p mat-line> description du cours</p>
-        <button mat-icon-button color="warn">
-          <mat-icon mat-list-icon>delete</mat-icon>
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <h3 mat-line>Nom du cours</h3>
-        <p mat-line> description du cours</p>
+      <mat-list-item *ngFor="let course of courses">
+        <h3 mat-line>{{course.name}}</h3>
+        <p mat-line>{{course.description}}</p>
         <button mat-icon-button color="warn">
           <mat-icon mat-list-icon>delete</mat-icon>
         </button>
