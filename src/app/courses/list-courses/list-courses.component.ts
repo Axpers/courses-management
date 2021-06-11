@@ -8,4 +8,5 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class ListCoursesComponent {
   @Input() courses;
   @Output() selected = new EventEmitter();
+  @Output() deleted = new EventEmitter();
 }

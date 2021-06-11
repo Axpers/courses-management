@@ -25,4 +25,9 @@ export class CoursesComponent implements OnInit {
   selectCourse(course) {
     return this.selectedCourse = course;
   }
+
+  deleteCourse(course) {
+    const courses = this.coursesService.courses;
+    courses.splice(courses.indexOf(course), 1);
+  }
 }
