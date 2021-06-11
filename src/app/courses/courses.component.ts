@@ -15,19 +15,31 @@ export class CoursesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.resetSelectedCourse();
     this.getCourses();
   }
 
-  getCourses() {
-    return this.courses = this.coursesService.courses;
+  resetSelectedCourse(){
+    this.selectedCourse = {
+      id: null,
+      name: '',
+      description: '',
+      percentageComplete: 0,
+      favorite: null,
+    };
   }
 
   selectCourse(course) {
-    return this.selectedCourse = course;
+    this.selectedCourse = course;
+    console.log(this.selectedCourse);
+  }
+
+  getCourses() {
+    this.courses = this.coursesService.getAllCourses();
   }
 
   deleteCourse(course) {
-    const courses = this.coursesService.courses;
-    courses.splice(courses.indexOf(course), 1);
+    this.coursesService.deleteCourse(course);
   }
+
 }

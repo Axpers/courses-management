@@ -4,13 +4,11 @@
                       (deleted)="deleteCourse($event)"
                       (selected)="selectCourse($event)">
     </app-list-courses>
-    <pre *ngIf="selectedCourse">{{selectedCourse | json}}</pre>
   </div>
 
   <div>
-    <app-course-form>
+    <app-course-form [selectedCourse]="selectedCourse">
     </app-course-form>
   </div>
-
 </div>
 

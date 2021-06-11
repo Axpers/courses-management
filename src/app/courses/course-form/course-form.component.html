@@ -1,25 +1,37 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Nom du Cours sélectionné</mat-card-title>
+    <mat-card-title>Nom du cours sélectionné</mat-card-title>
   </mat-card-header>
-
   <mat-card-content>
     <form>
       <mat-form-field appearance="outline">
         <mat-label>Nom du cours</mat-label>
-        <input matInput type="text" name="nom" required>
+        <input matInput
+               type="text"
+               name="nom"
+               required
+               [(ngModel)]="selectedCourse.name">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Description du cours</mat-label>
-        <input matInput type="text" name="description">
+        <input matInput
+               type="text"
+               name="description"
+               [(ngModel)]="selectedCourse.description">
       </mat-form-field>
 
-      <label>Pourcentage completé</label>
-      <mat-slider thumbLabel min="0" max="100" name="percentComplete">
+      <label>Pourcentage completé {{selectedCourse.percentageComplete}} %</label>
+      <mat-slider thumbLabel
+                  min="0"
+                  max="100"
+                  name="percentComplete"
+                  [(ngModel)]="selectedCourse.percentageComplete">
       </mat-slider>
 
-      <mat-checkbox>
+      <mat-checkbox color="warn"
+                    [(ngModel)]="selectedCourse.favorite"
+                    name="favori">
         Favorite
       </mat-checkbox>
     </form>

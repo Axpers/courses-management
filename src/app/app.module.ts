@@ -11,6 +11,7 @@ import {HeaderComponent} from './header/header.component';
 import {ListCoursesComponent} from './courses/list-courses/list-courses.component';
 import {CourseFormComponent} from './courses/course-form/course-form.component';
 import {CoursesListService} from './shared/courses-list.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {CoursesListService} from './shared/courses-list.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
   ],
   providers: [
     CoursesListService

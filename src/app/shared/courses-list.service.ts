@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesListService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  courses = [
+  private courses = [
     {
       id: 1,
       name: 'cours1Nom',
@@ -23,4 +24,15 @@ export class CoursesListService {
       favorite: false,
     }
   ];
+
+  getAllCourses() {
+    return this.courses;
+  }
+
+  deleteCourse(course) {
+    const index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
 }
+
+
