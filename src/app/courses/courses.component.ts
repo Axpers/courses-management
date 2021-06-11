@@ -7,14 +7,9 @@ import {CoursesListService} from '../shared/courses-list.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  courses = [
-    {
-      name: '',
-      description: '',
-      percentageComplete: 0,
-      favorite: false,
-    }
-  ];
+  courses = [];
+
+  selectedCourse = null;
 
   constructor(private coursesService: CoursesListService) {
   }
@@ -24,7 +19,10 @@ export class CoursesComponent implements OnInit {
   }
 
   getCourses() {
-    this.courses = this.coursesService.courses;
+    return this.courses = this.coursesService.courses;
   }
 
+  selectCourse(course) {
+    return this.selectedCourse = course;
+  }
 }

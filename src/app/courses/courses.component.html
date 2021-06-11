@@ -1,7 +1,8 @@
 <div class="courses-main-container">
   <div>
-    <app-list-courses [courses]="courses">
+    <app-list-courses [courses]="courses" (selected)="selectCourse($event)">
     </app-list-courses>
+    <pre *ngIf="selectedCourse">{{selectedCourse | json}}</pre>
   </div>
 
   <div>

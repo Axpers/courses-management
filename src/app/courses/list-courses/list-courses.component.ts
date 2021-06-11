@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-list-courses',
@@ -7,5 +7,5 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ListCoursesComponent {
   @Input() courses;
+  @Output() selected = new EventEmitter();
 }
-
