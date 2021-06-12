@@ -36,10 +36,6 @@ export class CoursesListService {
 
   createCourse(course) {
     this.courses.push(course);
-    console.log('Course created!', course);
-  }
-
-  modifyCourse(course) {
   }
 }
 
