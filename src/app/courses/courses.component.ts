@@ -9,7 +9,13 @@ import {CoursesListService} from '../shared/courses-list.service';
 export class CoursesComponent implements OnInit {
   courses = [];
 
-  selectedCourse = null;
+  selectedCourse = {
+    id: null,
+    name: '',
+    description: '',
+    percentageComplete: 0,
+    favorite: null,
+  };
 
   constructor(private coursesService: CoursesListService) {
   }

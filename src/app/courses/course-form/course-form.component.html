@@ -38,8 +38,12 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button mat-line>
+    <button mat-button>
       Submit
     </button>
+    <button mat-button (click)="resetSelectedCourse.emit(selectedCourse)">
+      Cancel
+    </button>
+
   </mat-card-actions>
 </mat-card>
