@@ -8,4 +8,5 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class CourseFormComponent {
   @Input() selectedCourse;
   @Output() resetSelectedCourse = new EventEmitter();
+  @Output() submitCourse = new EventEmitter();
 }

@@ -8,6 +8,7 @@
 
   <div>
     <app-course-form [selectedCourse]="selectedCourse"
+                     (submitCourse)="submitCourse($event)"
                      (resetSelectedCourse)="resetSelectedCourse()">
     </app-course-form>
   </div>

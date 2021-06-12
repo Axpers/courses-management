@@ -33,6 +33,13 @@ export class CoursesListService {
     const index = this.courses.indexOf(course);
     this.courses.splice(index, 1);
   }
+
+  createCourse(course) {
+    this.courses.push(course);
+  }
+
+  modifyCourse(course) {
+  }
 }
 
 

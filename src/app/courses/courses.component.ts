@@ -9,13 +9,7 @@ import {CoursesListService} from '../shared/courses-list.service';
 export class CoursesComponent implements OnInit {
   courses = [];
 
-  selectedCourse = {
-    id: null,
-    name: '',
-    description: '',
-    percentageComplete: 0,
-    favorite: null,
-  };
+  selectedCourse = null;
 
   constructor(private coursesService: CoursesListService) {
   }
@@ -25,7 +19,7 @@ export class CoursesComponent implements OnInit {
     this.getCourses();
   }
 
-  resetSelectedCourse(){
+  resetSelectedCourse() {
     this.selectedCourse = {
       id: null,
       name: '',
@@ -37,7 +31,7 @@ export class CoursesComponent implements OnInit {
 
   selectCourse(course) {
     this.selectedCourse = course;
-    console.log(this.selectedCourse);
+    console.log('Course selected', course);
   }
 
   getCourses() {
@@ -46,6 +40,15 @@ export class CoursesComponent implements OnInit {
 
   deleteCourse(course) {
     this.coursesService.deleteCourse(course);
+  }
+
+  submitCourse(course) {
+    if (course.id) {
+      //
+    } else {
+      this.coursesService.createCourse(course);
+      console.log('Course created!', course);
+    }
   }
 
 }

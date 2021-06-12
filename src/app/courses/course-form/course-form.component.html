@@ -38,7 +38,7 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>
+    <button mat-button (click)="submitCourse.emit(selectedCourse)">
       Submit
     </button>
     <button mat-button (click)="resetSelectedCourse.emit(selectedCourse)">
