@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SidebarRoutesService} from '../shared/sidebar-routes.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  constructor() {}
+  routes = [];
 
-  ngOnInit(): void {}
+  constructor(private sidebarRoutesService: SidebarRoutesService) {
+  }
+
+  ngOnInit(): void {
+    this.getRoutes();
+  }
+
+  getRoutes() {
+    this.routes = this.sidebarRoutesService.getRoutes();
+  }
 }
