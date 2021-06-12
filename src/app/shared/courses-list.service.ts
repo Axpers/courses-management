@@ -10,14 +10,14 @@ export class CoursesListService {
 
   private courses = [
     {
-      id: 1,
+      id: 0,
       name: 'cours1Nom',
       description: 'cours1Description',
       percentageComplete: 10,
       favorite: true,
     },
     {
-      id: 2,
+      id: 1,
       name: 'cours2Nom',
       description: 'cours2Description',
       percentageComplete: 50,
@@ -36,6 +36,7 @@ export class CoursesListService {
 
   createCourse(course) {
     this.courses.push(course);
+    console.log('Course created!', course);
   }
 
   modifyCourse(course) {
