@@ -34,8 +34,8 @@
         thumbLabel
         min="0"
         max="100"
-        name="percentComplete"
         id="percentComplete"
+        name="percentComplete"
         title="percentComplete"
         [(ngModel)]="selectedCourse.percentageComplete"
       >
@@ -50,10 +50,20 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <button [disabled]="form.invalid" type="submit" mat-button>
+      <button
+        [disabled]="form.invalid"
+        type="submit"
+        mat-button
+        title="submit selected course"
+      >
         Submit
       </button>
-      <button type="button" mat-button (click)="resetSelectedCourse.emit(selectedCourse)">
+      <button
+        type="button"
+        mat-button
+        (click)="resetSelectedCourse.emit(selectedCourse)"
+        title="cancel Selected Course"
+      >
         Cancel
       </button>
     </mat-card-actions>

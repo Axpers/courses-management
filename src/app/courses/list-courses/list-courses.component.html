@@ -7,7 +7,12 @@
       <mat-list-item *ngFor="let course of courses" (click)="selected.emit(course)">
         <h3 mat-line>{{course.name}}</h3>
         <p mat-line>{{course.description}}</p>
-        <button mat-icon-button color="warn" (click)="deleted.emit(course)">
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="deleted.emit(course)"
+          title="bouton pour supprimer le cours associé"
+        >
           <mat-icon mat-list-icon>delete</mat-icon>
         </button>
       </mat-list-item>
