@@ -1,5 +1,5 @@
-<mat-sidenav-container [ngClass]="{'active': sidebarToggled}">
-  <mat-sidenav-content>
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="sidebarToggled" mode="side" opened>
     <nav>
       <a mat-button
          *ngFor="let route of routes"
@@ -12,5 +12,5 @@
         {{route.name}}
       </a>
     </nav>
-  </mat-sidenav-content>
+  </mat-sidenav>
 </mat-sidenav-container>
