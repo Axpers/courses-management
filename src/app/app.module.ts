@@ -12,6 +12,7 @@ import {ListCoursesComponent} from './courses/list-courses/list-courses.componen
 import {CourseFormComponent} from './courses/course-form/course-form.component';
 import {CoursesListService} from './shared/courses-list.service';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {FormsModule} from '@angular/forms';
     HeaderComponent,
     ListCoursesComponent,
     CourseFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
