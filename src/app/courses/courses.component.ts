@@ -46,10 +46,14 @@ export class CoursesComponent implements OnInit {
   }
 
   submitCourse(course) {
-    const courses = this.coursesService.getAllCourses();
-    if (!courses.includes(course)) {
+    const courses = (this.coursesService.getAllCourses()).filter(v => v.id === course.id);
+    if (courses.length === 0) {
       course.id = courses.length;
       this.coursesService.createCourse(course);
+      console.log('Course created!', course);
+    } else {
+      this.coursesService.updateCourse(course);
+      console.log('Course updated!', course);
     }
     this.loadCourses();
   }

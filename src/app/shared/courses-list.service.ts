@@ -37,6 +37,12 @@ export class CoursesListService {
   createCourse(course) {
     this.courses.push(course);
   }
+
+  updateCourse(course) {
+    const courses = this.courses;
+    const index = courses.findIndex(v => v.id === course.id);
+    courses[index] = {...course};
+  }
 }
 
 

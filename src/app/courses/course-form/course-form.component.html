@@ -1,35 +1,50 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Nom du cours sélectionné</mat-card-title>
+    <span *ngIf="selectedCourse.name; else elseBlock">{{originalTitle}}</span>
+    <ng-template #elseBlock>
+      <span class="header-span">
+        Select a course
+      </span>
+    </ng-template>
   </mat-card-header>
   <form #form="ngForm" (submit)="submitCourse.emit(selectedCourse)">
     <mat-card-content>
       <mat-form-field appearance="outline">
         <mat-label>Nom du cours</mat-label>
-        <input matInput
-               type="text"
-               name="nom"
-               required
-               [(ngModel)]="selectedCourse.name">
+        <input
+          matInput
+          type="text"
+          name="nom"
+          required
+          [(ngModel)]="selectedCourse.name"
+        >
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Description du cours</mat-label>
-        <input matInput
-               type="text"
-               name="description"
-               [(ngModel)]="selectedCourse.description">
+        <input
+          matInput
+          type="text"
+          name="description"
+          [(ngModel)]="selectedCourse.description"
+        >
       </mat-form-field>
 
-      <label>Pourcentage completé : {{selectedCourse.percentageComplete}} %</label>
-      <mat-slider thumbLabel
-                  min="0"
-                  max="100"
-                  name="percentComplete"
-                  [(ngModel)]="selectedCourse.percentageComplete">
+      <label for="percentComplete">Pourcentage completé : {{selectedCourse.percentageComplete}} %</label>
+      <mat-slider
+        thumbLabel
+        min="0"
+        max="100"
+        name="percentComplete"
+        id="percentComplete"
+        title="percentComplete"
+        [(ngModel)]="selectedCourse.percentageComplete"
+      >
       </mat-slider>
-      <mat-checkbox color="primary"
-                    [(ngModel)]="selectedCourse.favorite"
-                    name="favori">
+      <mat-checkbox
+        color="primary"
+        [(ngModel)]="selectedCourse.favorite"
+        name="favori"
+      >
         Favorite
       </mat-checkbox>
 
@@ -41,7 +56,6 @@
       <button type="button" mat-button (click)="resetSelectedCourse.emit(selectedCourse)">
         Cancel
       </button>
-
     </mat-card-actions>
   </form>
 </mat-card>
