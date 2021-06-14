@@ -1,7 +1,14 @@
-<app-header></app-header>
+<app-header
+  (menuTriggered)="toggleSidebar()"
+>
+</app-header>
 
-<app-sidebar></app-sidebar>
+<app-sidebar
+  [sidebarToggled]="sidebarToggled"
+>
+</app-sidebar>
 
 <main class="container">
-  <router-outlet></router-outlet>
+  <router-outlet>
+  </router-outlet>
 </main>

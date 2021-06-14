@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SidebarRoutesService} from '../shared/sidebar-routes.service';
 
 @Component({
@@ -8,6 +8,7 @@ import {SidebarRoutesService} from '../shared/sidebar-routes.service';
 })
 export class SidebarComponent implements OnInit {
   routes = [];
+  @Input() sidebarToggled;
 
   constructor(private sidebarRoutesService: SidebarRoutesService) {
   }
