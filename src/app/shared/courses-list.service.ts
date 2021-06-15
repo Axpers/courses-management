@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Course} from './types/course';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class CoursesListService {
   constructor() {
   }
 
-  private courses = [
+  private courses: Course[] = [
     {
       id: 0,
       name: 'cours1Nom',
@@ -29,22 +30,22 @@ export class CoursesListService {
     return this.courses;
   }
 
-  deleteCourse(course) {
+  deleteCourse(course: Course) {
     const index = this.courses.indexOf(course);
     this.courses.splice(index, 1);
   }
 
-  createCourse(course) {
+  createCourse(course: Course) {
     this.courses.push(course);
   }
 
-  updateCourse(course) {
+  updateCourse(course: Course) {
     const courses = this.courses;
     const index = courses.findIndex(v => v.id === course.id);
     courses[index] = {...course};
   }
 
-  updateOrCreate(course) {
+  updateOrCreate(course: Course) {
     const itExists = this.courses.find(v => v.id === course.id);
     if (itExists) {
       this.updateCourse(course);
@@ -55,21 +56,6 @@ export class CoursesListService {
       console.log('Course created!', course);
     }
   }
-
-  /*
-  submitCourse(course) {
-    const courses = (this.coursesService.getAllCourses()).filter(v => v.id === course.id);
-    if (courses.length === 0) {
-      course.id = courses.length;
-      this.coursesService.createCourse(course);
-      console.log('Course created!', course);
-    } else {
-      this.coursesService.updateCourse(course);
-      console.log('Course updated!', course);
-    }
-    this.loadCourses();
-  }
-   */
 }
 
 

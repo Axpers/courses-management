@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CoursesListService} from '../shared/courses-list.service';
+import {Course} from '../shared/types/course';
 
 @Component({
   selector: 'app-courses',
@@ -7,9 +8,15 @@ import {CoursesListService} from '../shared/courses-list.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  courses = [];
+  courses: Course[] = [];
 
-  selectedCourse = null;
+  selectedCourse: Course = {
+    id: null,
+    name: '',
+    description: '',
+    percentageComplete: 0,
+    favorite: false,
+  };
 
   constructor(private coursesService: CoursesListService) {
   }
@@ -24,7 +31,7 @@ export class CoursesComponent implements OnInit {
       name: '',
       description: '',
       percentageComplete: 0,
-      favorite: null,
+      favorite: false,
     };
   }
 
@@ -37,15 +44,16 @@ export class CoursesComponent implements OnInit {
     this.getCourses();
   }
 
-  selectCourse(course) {
+  selectCourse(course: Course) {
     this.selectedCourse = course;
   }
 
-  deleteCourse(course) {
+  deleteCourse(course: Course) {
     this.coursesService.deleteCourse(course);
+    this.loadCourses();
   }
 
-  submitCourse(course) {
+  submitCourse(course: Course) {
     this.coursesService.updateOrCreate(course);
     this.loadCourses();
   }
