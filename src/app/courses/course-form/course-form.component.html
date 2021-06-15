@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <span *ngIf="selectedCourse.name; else elseBlock">{{originalTitle}}</span>
+    <span *ngIf="selectedCourse.id; else elseBlock">{{originalTitle}}</span>
     <ng-template #elseBlock>
       <span class="header-span">
         Select a course
