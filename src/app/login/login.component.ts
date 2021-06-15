@@ -8,28 +8,23 @@ import {Component, OnInit} from '@angular/core';
 export class LoginComponent implements OnInit {
   userName: string;
   userPassword: string;
-  userInformation: {};
+  hidePassword = true;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    /*
     this.resetUserInformation();
-     */
   }
 
   submitCourse() {
     console.log('Login submited');
+    this.resetUserInformation();
   }
 
-  /*
+
   resetUserInformation() {
-    this.userInformation = {
-      this.userName = '',
-      this.userPassword: ''
-    };
+    this.userName = '';
+    this.userPassword = '';
   }
-   */
-
 }
