@@ -12,11 +12,11 @@ app-header {
 
 
 .sidebar-active {
-  flex: 20%;
+  flex:0 1 15%;
   height: 90%;
 }
 
 .router-outlet-container {
-  flex: 80%;
+  flex: 85%;
   height: 90%;
 }
