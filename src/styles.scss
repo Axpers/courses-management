@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/*
 html, body {
   height: 100%;
   width: 100%;
@@ -32,3 +37,5 @@ app-sidebar {
   grid-column: 2/-1;
   grid-row: 2/3;
 }
+
+ */
