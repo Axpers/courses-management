@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SidebarRoutesService} from '../shared/sidebar-routes.service';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,7 @@ import {SidebarRoutesService} from '../shared/sidebar-routes.service';
 })
 export class SidebarComponent implements OnInit {
   routes = [];
-  @Input() sidebarToggled;
+  @Input() sidebarToggled: boolean;
 
   constructor(private sidebarRoutesService: SidebarRoutesService) {
   }

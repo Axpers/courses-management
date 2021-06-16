@@ -1,14 +1,16 @@
-<app-header
-  (menuTriggered)="toggleSidebar()"
->
-</app-header>
+<div class="main-container">
+  <app-header
+    (menuTriggered)="toggleSidebar()"
+  >
+  </app-header>
+  <app-sidebar
+    [sidebarToggled]="sidebarToggled"
+    [class.sidebar-active]="sidebarToggled"
+  >
+  </app-sidebar>
 
-<app-sidebar
-  [sidebarToggled]="sidebarToggled"
->
-</app-sidebar>
-
-<main class="container">
-  <router-outlet>
-  </router-outlet>
-</main>
+  <main class="router-outlet-container">
+    <router-outlet>
+    </router-outlet>
+  </main>
+</div>

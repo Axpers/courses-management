@@ -1,0 +1,22 @@
+.main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+app-header {
+  flex: 100%;
+  height: 10%;
+}
+
+
+.sidebar-active {
+  flex: 20%;
+  height: 90%;
+}
+
+.router-outlet-container {
+  flex: 80%;
+  height: 90%;
+}
