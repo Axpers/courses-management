@@ -19,9 +19,6 @@ import {SidebarRoutesService} from './shared/sidebar-routes.service';
     AppComponent,
     SidebarComponent,
     HeaderComponent,
-    CoursesComponent,
-    ListCoursesComponent,
-    CourseFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +28,6 @@ import {SidebarRoutesService} from './shared/sidebar-routes.service';
     FormsModule,
   ],
   providers: [
-    CoursesListService,
     SidebarRoutesService
   ],
   bootstrap: [AppComponent],
