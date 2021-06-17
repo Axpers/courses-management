@@ -12,17 +12,16 @@ import {ListCoursesComponent} from './courses/list-courses/list-courses.componen
 import {CourseFormComponent} from './courses/course-form/course-form.component';
 import {CoursesListService} from './shared/courses-list.service';
 import {FormsModule} from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import {SidebarRoutesService} from './shared/sidebar-routes.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
     SidebarComponent,
     HeaderComponent,
+    CoursesComponent,
     ListCoursesComponent,
     CourseFormComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
   ],
   providers: [
-    CoursesListService
+    CoursesListService,
+    SidebarRoutesService
   ],
   bootstrap: [AppComponent],
 })
