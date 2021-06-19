@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {SidebarRoutesService} from '../shared/sidebar-routes.service';
 import {MatSidenav} from '@angular/material/sidenav';
 
@@ -10,7 +10,6 @@ import {MatSidenav} from '@angular/material/sidenav';
 export class SidebarComponent implements OnInit {
   routes = [];
   @ViewChild('mySidenav') private sidenavId: MatSidenav;
-  @Input() sidebarToggled;
 
   constructor(private sidebarRoutesService: SidebarRoutesService) {
   }

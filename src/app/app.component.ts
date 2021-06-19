@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {SidebarComponent} from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,9 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title: 'AngularProject';
-  sidebarToggled = true;
+  @ViewChild(SidebarComponent) sidebarComponent;
 
   toggleSidebar() {
-    if (this.sidebarToggled) {
-      this.sidebarToggled = false;
-      console.log(this.sidebarToggled);
-    } else {
-      this.sidebarToggled = true;
-      console.log(this.sidebarToggled);
-    }
+    this.sidebarComponent.toggleSidebar();
   }
 }
