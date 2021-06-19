@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SidebarRoutesService} from '../shared/sidebar-routes.service';
-import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-sidebar',
