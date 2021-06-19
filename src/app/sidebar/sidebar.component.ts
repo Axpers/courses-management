@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {SidebarRoutesService} from '../shared/sidebar-routes.service';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,8 @@ import {SidebarRoutesService} from '../shared/sidebar-routes.service';
 })
 export class SidebarComponent implements OnInit {
   routes = [];
-  @Input() sidebarToggled: boolean;
+  @ViewChild('mySidenav') private sidenavId: MatSidenav;
+  @Input() sidebarToggled;
 
   constructor(private sidebarRoutesService: SidebarRoutesService) {
   }
@@ -19,5 +21,9 @@ export class SidebarComponent implements OnInit {
 
   getRoutes() {
     this.routes = this.sidebarRoutesService.getRoutes();
+  }
+
+  toggleSidebar() {
+    this.sidenavId.toggle();
   }
 }
