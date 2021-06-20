@@ -1,15 +1,46 @@
 <div class="main-container">
-  <app-header
-    (menuTriggered)="toggleSidebar()"
-  >
-  </app-header>
-  <app-sidebar
-    class="sidebar"
-  >
-  </app-sidebar>
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      mat-mini-fab
+      title="Bouton pour cacher le menu latéral"
+      (click)="mySidenav.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/logo.png" alt="logo">
+    <h1>
+      Angular Project
+    </h1>
+    <button
+      mat-icon-button
+      mat-mini-fab
+      title="Bouton pour accéder au login"
+      (click)="linkToLoginComponent()"
+    >
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>
 
-  <main class="router-outlet-container">
-    <router-outlet>
-    </router-outlet>
-  </main>
+  <mat-sidenav-container>
+    <mat-sidenav #mySidenav mode="side" closed role="directory">
+      <nav>
+        <a mat-button
+           *ngFor="let route of routes"
+           [routerLink]="route.path">
+
+          <mat-icon>
+            {{route.icon}}
+          </mat-icon>
+
+          {{route.name}}
+        </a>
+      </nav>
+    </mat-sidenav>
+
+    <main class="router-outlet-container">
+      <router-outlet>
+      </router-outlet>
+    </main>
+  </mat-sidenav-container>
 </div>
