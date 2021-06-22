@@ -28,4 +28,34 @@ mat-sidenav-container {
   display: flex;
   width: 100%;
   height: 90%;
+
+  mat-sidenav {
+    height: 100%;
+    width: 15%;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+    padding-top: 10px;
+
+    nav {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      a {
+        width: 90%;
+        display: flex;
+      }
+    }
+
+  }
+
+  mat-sidenav-content {
+    height: 100%;
+    width: 85%;
+    flex: 1;
+
+    main {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
