@@ -1,4 +1,4 @@
-# AngularProject
+# Angular project
 
 ### Installation : 
 `npm i` 
